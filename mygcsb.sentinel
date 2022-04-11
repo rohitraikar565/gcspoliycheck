@@ -11,7 +11,7 @@ violatingGCSSTORAGE = plan.filter_attribute_not_in_list(storage_class,
                         "Access control", allowed_types, true)
 
 # Count violations
-violations = length(violatingGCSSnstORAGE["messages"])
+violations = length(violatingGCSSTORAGE["messages"])
 
 # Main rule
 main = rule {
