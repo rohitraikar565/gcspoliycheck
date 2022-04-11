@@ -7,7 +7,7 @@ Access control = ["Uniform"]
 required_acl = "private"
 
 # Count violations
-violations = length(violatingGCSSTORAGE["messages"])
+violations = length(violatinggcsstorage["messages"])
 
 # Main rule
 main = rule {
