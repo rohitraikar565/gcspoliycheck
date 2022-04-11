@@ -2,7 +2,6 @@
 import "tfplan-functions" as plan
 
 # Allowed GCS STORAGE ACCESS
-storage_class= ["standard", "nearline", "coldline"]
 allGCSStorage = plan.find_resources("google_storage_bucket")
 Access control = ["Uniform"]
 required_acl = "private"
