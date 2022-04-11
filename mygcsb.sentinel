@@ -4,7 +4,7 @@ import "tfplan-functions" as plan
 # Allowed GCS STORAGE ACCESS
 storage_class= ["standard", "nearline", "coldline"]
 allGCSStorage = plan.find_resources("google_storage_bucket")
-Access control = ["Uniform","Fine-grained"]
+Access control = ["Uniform"]
 
 # Filter to GCS STORAGE with violations
 violatingGCSSTORAGE = plan.filter_attribute_not_in_list(storage_class,
