@@ -5,10 +5,7 @@ import "tfplan-functions" as plan
 storage_class= ["standard", "nearline", "coldline"]
 allGCSStorage = plan.find_resources("google_storage_bucket")
 Access control = ["Uniform"]
-
-# Filter to GCS STORAGE with violations
-violatingGCSSTORAGE = plan.filter_attribute_not_in_list(storage_class,
-                        "Access control", allowed_types, true)
+required_acl = "private"
 
 # Count violations
 violations = length(violatingGCSSTORAGE["messages"])
