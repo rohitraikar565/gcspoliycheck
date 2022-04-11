@@ -1,0 +1,18 @@
+import "tfplan-functions" as plan
+
+ all_GCS_BUCKET = plan.find_resources("google_storage_bucket")
+
+
+ required_acl = "private"
+
+
+ #violatingGCSSTORAGE = plan.filter_attribute_not_in_list(storage_class,
+                         "Access control", allowed_types, true)
+
+ # Count violations
+ violations = length(violatingGCSSTORAGE["messages"])
+
+ # Main rule
+ main = rule {
+   violations is 0
+ }
