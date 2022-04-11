@@ -1,5 +1,4 @@
-
-import "tfplan-functions" as plan
+import "tfrun"
 
 # Allowed GCS STORAGE ACCESS
 allGCSStorage = plan.find_resources("google_storage_bucket")
