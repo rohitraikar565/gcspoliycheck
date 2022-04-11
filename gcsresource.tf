@@ -1,7 +1,6 @@
 provider "google" {
-  credentials = "${file("account.json")}"
+  credentials = "${file("inframod-training-09efb368bf98.json")}"
   project     = "inframod-training"
-  region      = "asia-south1"
   zone        = "asia-south1-a"
 }
 resource "google_storage_bucket" "static-site" {
