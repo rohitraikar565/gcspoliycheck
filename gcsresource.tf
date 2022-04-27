@@ -27,6 +27,6 @@ resource "google_logging_project_bucket_config" "basic" {
     retention_days = 30
     bucket_id = "image-store"
       logging {
-      enabled = true
+        enabled = true
     }
 }
