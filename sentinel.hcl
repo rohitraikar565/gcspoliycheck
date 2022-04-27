@@ -6,6 +6,11 @@ policy "cost" {
   enforcement_level = "soft-mandatory"
 }
 policy "bucketversioning" {
-    source = "./storage-bucket/bucket-versioning-is-enabled/bucket-versioning-is-enabled.sentinel"
+    source = "./bucketversioning.sentinel"
+    enforcement_level = "advisory"
+}
+
+policy "ensure-logging-is-enabled-on-storage-bucket" {
+    source = "./bucketlogging.sentinel"
     enforcement_level = "advisory"
 }
