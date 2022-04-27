@@ -1,0 +1,31 @@
+import "tfplan/v2" as tfplan
+
+# Get all Buckets
+allStorageBuckets = filter tfplan.resource_changes as _, resource_changes {
+	resource_changes.type is "google_storage_bucket" and
+		resource_changes.mode is "managed" and
+		(resource_changes.change.actions contains "create" or
+			resource_changes.change.actions is ["update"])
+}
+
+print("CIS ?.?: Ensure that versioning is enabled for Cloud storage buckets")
+
+deny_undefined_versioning = rule {
+	all allStorageBuckets as _, bucket {
+		keys(bucket.change.after) contains "versioning" and
+			(bucket.change.after.versioning is not [])
+	}
+}
+
+ensure_storage_bucket_versioning_is_enabled = rule when deny_undefined_versioning is true {
+	all allStorageBuckets as _, bucket {
+        all bucket.change.after.versioning as _, versioning {
+			versioning.enabled is true
+		}
+	}
+}
+
+main = rule {
+	deny_undefined_versioning and
+	ensure_storage_bucket_versioning_is_enabled
+}
