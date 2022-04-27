@@ -26,5 +26,4 @@ resource "google_logging_project_bucket_config" "basic" {
     location  = "asia-south1-a"
     retention_days = 30
     bucket_id = "image-store"
-    logging = true
 }
