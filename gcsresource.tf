@@ -16,9 +16,4 @@ resource "google_storage_bucket" "stat-bucket" {
   location      = "asia-south1"
   force_destroy = true
   uniform_bucket_level_access = true
-  versioning {
-    enabled = {
-      value = true  
-    }
-  }
 }
