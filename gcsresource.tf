@@ -1,3 +1,11 @@
+terraform {
+  cloud {
+    organization = "niveussolutions"
+    workspaces {
+      id = ["ws-PGx1cfNuXKV3ZDLX"]
+    }
+  }
+}
 provider "google" {
   credentials = "${file("inframod-training-09efb368bf98.json")}"
   project     = "inframod-training"
