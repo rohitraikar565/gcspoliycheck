@@ -14,6 +14,9 @@ provider "google" {
 resource "google_storage_bucket" "stat-bucket" {
   name          = "image-store"
   location      = "asia-south1"
-  force_destroy = false
+  force_destroy = true
   uniform_bucket_level_access = true
+  versioning    = {
+    enable = true
+  }
 }
