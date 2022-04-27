@@ -17,7 +17,7 @@ resource "google_storage_bucket" "stat-bucket" {
   force_destroy = true
   uniform_bucket_level_access = true
   versioning {
-    enabled ={
+    enabled = {
       value = true  
     }
   }
