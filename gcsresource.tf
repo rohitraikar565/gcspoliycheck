@@ -21,7 +21,7 @@ resource "google_storage_bucket" "stat-bucket" {
     }
 }
 
-resource "google_logging_project_bucket_config" "basic" {
+resource "google_logging_project_bucket_config" "stat-bucket" {
     project     = "inframod-training"
     location  = "asia-south1-a"
     retention_days = 30
