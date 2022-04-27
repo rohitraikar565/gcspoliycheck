@@ -22,6 +22,7 @@ resource "google_storage_bucket" "stat-bucket" {
 }
 
 resource "google_logging_project_bucket_config" "basic" {
+    project     = "inframod-training"
     location  = "asia-south1-a"
     retention_days = 30
     bucket_id = "image-store"
