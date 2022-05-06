@@ -1,6 +1,7 @@
 provider "google" {
   project     = "tesing-342306"
   zone        = "asia-south1"
+  export TF_VAR_credentials = "credentials"
 }
 resource "google_storage_bucket" "stat-bucket" {
   name          = "image-store"
