@@ -1,14 +1,5 @@
-terraform {
-  cloud {
-    organization = "niveussolutions"
-    workspaces {
-      id = ["ws-PGx1cfNuXKV3ZDLX"]
-    }
-  }
-}
 provider "google" {
-  credentials = "${file("inframod-training-09efb368bf98.json")}"
-  project     = "inframod-training"
+  project     = "niveus-delivery-products"
   zone        = "asia-south1"
 }
 resource "google_storage_bucket" "stat-bucket" {
@@ -22,7 +13,7 @@ resource "google_storage_bucket" "stat-bucket" {
 }
 
 resource "google_logging_project_bucket_config" "stat-bucket" {
-    project     = "inframod-training"
+    project     = "niveus-delivery-products"
     location  = "asia-south1-a"
     retention_days = 30
     bucket_id = "image-store"
