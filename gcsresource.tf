@@ -1,7 +1,6 @@
 provider "google" {
   project     = "tesing-342306"
   zone        = "asia-south1"
-  credentials = "tesing-342306-f93e1b4153bc.json"
 }
 resource "google_storage_bucket" "stat-bucket" {
   name          = "image-store"
