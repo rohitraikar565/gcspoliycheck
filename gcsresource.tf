@@ -1,6 +1,6 @@
 provider "google" {
   project     = "tesing-342306"
-  zone        = "asia-south1-a"
+  zone        = "asia-south1"
 }
 resource "google_storage_bucket" "xpcs" {
   name          = "xpcs"
@@ -12,6 +12,7 @@ resource "google_storage_bucket" "xpcs" {
       enabled = true
     }
 }
+/*
 
 resource "google_logging_project_bucket_config" "xpcs" {
     project     = "niveus-delivery-products"
@@ -19,3 +20,4 @@ resource "google_logging_project_bucket_config" "xpcs" {
     retention_days = 30
     bucket_id = "image-store"
 }
+*/
