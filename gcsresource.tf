@@ -3,8 +3,9 @@ provider "google" {
   zone        = "asia-south1-a"
 }
 resource "google_storage_bucket" "xpcs" {
-  name          = "image-store"
+  name          = "xpcs"
   location      = "asia-south1-a"
+  count         = 2
   force_destroy = true
   uniform_bucket_level_access = true
     versioning {
