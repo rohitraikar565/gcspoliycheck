@@ -1,5 +1,5 @@
 provider "google" {
-  project     = "niveus-delivery-products"
+  project     = "niveustraining"
   zone        = "asia-south1"
 }
 resource "google_storage_bucket" "stat-bucket" {
