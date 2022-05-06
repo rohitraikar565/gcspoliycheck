@@ -2,15 +2,12 @@ provider "google" {
   project     = "tesing-342306"
   zone        = "asia-south1"
 }
-resource "google_storage_bucket" "xpcs" {
-  name          = "xpcs"
+resource "google_storage_bucket" "static-site" {
+  name          = "image-store.com"
   location      = "asia-south1-a"
-  count         = 2
   force_destroy = true
+
   uniform_bucket_level_access = true
-    versioning {
-      enabled = true
-    }
 }
 /*
 
