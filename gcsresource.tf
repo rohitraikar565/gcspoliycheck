@@ -1,6 +1,6 @@
 provider "google" {
   project     = "tesing-342306"
-  zone        = "asia-south1"
+  zone        = "us-central1"
 }
 resource "google_storage_bucket" "static-site" {
   name          = "image-store.com"
